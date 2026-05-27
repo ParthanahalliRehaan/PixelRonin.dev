@@ -1,0 +1,676 @@
+---
+
+## The PixelRonin.Dev 30-Day Prompt Plan (Rebuilt for Zero Assumptions)
+
+Each prompt below is written so that when you paste it, the response will:
+1. Define every jargon word the moment it introduces it
+2. Show you the full "why" before the "how"
+3. Explain each terminal command word by word before you run it
+4. Explain each file before you create it
+5. Show you a Swagger-style API browser where relevant
+6. End with exactly what you built and what tomorrow's prompt will add to it
+
+---
+
+### Day 0
+```
+I am building PixelRonin.Dev — a 30-day project that will teach me full-stack web development by building a real AI-powered learning roadmap app. By day 30, it will have: a React/Next.js frontend, a Hono API backend, a PostgreSQL database, Clerk auth, and a Claude AI chat — all deployed on Cloudflare.
+
+Today is Day 0: environment setup.
+
+Before doing anything, explain these terms to me like I am 12:
+- What is a monorepo and why are we using one instead of two separate projects?
+- What is a "terminal" and what does it mean to "run a command"?
+- What is Node.js and why does it need to be installed?
+- What is npm? What does "package" mean in JavaScript?
+- What is Git and what does "version control" mean in plain English?
+- What is a .env file, and what is an "environment variable"? Why do developers never commit these to Git?
+- What is VS Code and why do developers use a code editor instead of Notepad?
+
+Then show me the folder structure we will have by Day 30 and explain what each folder is for — before I create anything.
+
+Then walk me through every terminal command one by one. Before each command, explain: what does this command do, what does each word in it mean, and what will I see when it finishes?
+
+After each file we create, explain: what is this file for, why does it exist, and what would break if I deleted it?
+
+At the end: tell me exactly what I built today, what "environment setup" actually means, and what Day 1 will build on top of this.
+```
+
+---
+
+### Day 1
+```
+PixelRonin.Dev — Day 1: What is React and why does it exist?
+
+Yesterday I set up my environment. Today I write my first React code.
+
+Before writing any code, explain these things:
+- What is a "library" vs a "framework" — and which is React?
+- What problem did React solve that plain HTML and JavaScript had? Show me a before/after example.
+- What is JSX? Why does my JavaScript file contain what looks like HTML?
+- What is a "component"? Why do we break UI into components instead of writing one giant HTML file?
+- What is Vite? Why are we using it instead of just opening an HTML file in a browser?
+- What does it mean to "render" something?
+
+Then walk me through building a static PixelRonin landing page with a Hero component and three PhaseCard components. Before each file, explain what it is for. Before each new piece of syntax (props, export default, className), explain it exactly when I hit it — not before.
+
+When we are done, open the app in the browser and explain what just happened between me running the command and the page appearing.
+
+End with: what I learned, the git commit message, and what Day 2 will add.
+```
+
+---
+
+### Day 2
+```
+PixelRonin.Dev — Day 2: How does React know when to update the screen?
+
+Yesterday I built a static landing page. Today I make it interactive.
+
+Before writing code, explain:
+- What is "state" in a UI? Give me a real-world analogy.
+- What is useState? What does the word "hook" mean in React?
+- What is a "re-render"? Walk me through exactly what happens step by step when I click a button — from the click to the pixel changing on screen.
+- What is the difference between a variable and a state variable? What breaks if I use a regular variable to track something the user clicks?
+
+Then build an interactive skill-tag selector for PixelRonin. Clicking a tag toggles it selected/deselected. A counter shows how many are selected. Before each new line of code introduces a concept, explain it.
+
+Explain what would happen if I put the state in the wrong component — too high, too low.
+
+End with: what I learned, the git commit message, what Day 3 adds.
+```
+
+---
+
+### Day 3
+```
+PixelRonin.Dev — Day 3: What is a "side effect" and why does useEffect exist?
+
+Yesterday I learned useState and re-renders. Today I fetch data.
+
+Before any code:
+- What is a "side effect" in programming? Why is fetching data considered one?
+- What is useEffect and why can't I just fetch data at the top of my component?
+- What does the dependency array [] mean? What happens if I leave it out vs put [] vs put [someVariable]?
+- What is "loading state"? What is an "error state"? Why do real apps always need both?
+- What does the cleanup function (the return inside useEffect) do and when does it run?
+- What is a JSON file and what does "fetch" actually do under the hood — what travels across the network?
+
+Then make me fetch a local fake roadmap JSON file on component mount. Show loading, error, and data states in the UI. Before each new concept, explain it at the moment I need it.
+
+End with: what I learned, the git commit message, what Day 4 adds.
+```
+
+---
+
+### Day 4
+```
+PixelRonin.Dev — Day 4: Custom hooks — how to reuse logic between components.
+
+Yesterday I fetched data with useEffect. Today I learn to package logic.
+
+Before code:
+- What is a "custom hook"? If I wrote my fetch logic directly in the component, what problem would appear if I needed the same logic in two components?
+- What are the Rules of Hooks? Why can't I call a hook inside an if statement?
+- What does it mean to "extract" logic? Walk me through the thought process of deciding what belongs in a hook vs what stays in a component.
+
+Then extract my fetch logic into a useRoadmap() hook and my skill selection logic into a useSkillPicker() hook. Show me the before-and-after of the component — how many lines it went from to how many.
+
+Explain how custom hooks are different from utility functions.
+
+End with: what I learned, the git commit message, what Day 5 builds.
+```
+
+---
+
+### Day 5
+```
+PixelRonin.Dev — Day 5: Component composition — how to think about breaking UI apart.
+
+Yesterday I extracted hooks. Today I build the full UI shell.
+
+Before code:
+- What is the "children" prop and why is it special compared to other props?
+- What is a "compound component"? Show me a real example of when this pattern makes sense.
+- How do I decide if a piece of UI should be its own component? What is "too big" and what is "too small"?
+- What is a "layout component" vs a "content component"?
+
+Build the full PixelRonin UI shell: Sidebar, MainContent, RoadmapCard, SkillBadge, PhaseHeader — as separate components wired together. Before creating each file, tell me what it will do and why it exists as its own component.
+
+End with: what I learned, git commit, Day 6 preview.
+```
+
+---
+
+### Day 6
+```
+PixelRonin.Dev — Day 6: Context API — sharing state without passing props everywhere.
+
+Yesterday I built the full component tree. Today I make components talk to each other without passing props through every layer.
+
+Before code:
+- What is "prop drilling"? Show me a concrete example of what it looks like when it gets bad — 4+ levels deep.
+- Why doesn't prop drilling "break" anything — why is it just a pain?
+- What is React Context? What problem does it solve and what problems does it NOT solve?
+- What is a "Provider"? What is a "Consumer"? What is createContext()?
+- When is Context NOT the right tool? What would I use instead for very complex state?
+
+Build a UserProgressContext that tracks which roadmap days I have completed. Wrap the app in it. Consume it in two different child components that are not direct siblings.
+
+End with: what I learned, git commit, Day 7 preview.
+```
+
+---
+
+### Day 7
+```
+PixelRonin.Dev — Day 7: Forms and controlled inputs.
+
+Yesterday I set up Context. Today I build the intake form that will later feed the AI.
+
+Before code:
+- What is a "controlled input" in React? What makes an input "uncontrolled"?
+- Why does React do forms differently from plain HTML forms? What does the browser normally do on form submit that React stops?
+- What is "form validation"? What is client-side vs server-side validation — and why do we need both even if we do one?
+- What is an "onChange" handler and why does it fire on every keypress?
+
+Build the PixelRonin intake form: current skill level, what they want to learn, time available per day. With validation: no empty fields, time must be a number. This is the form that will feed the AI in Day 27.
+
+Explain what data shape this form will produce and how I will later send it to the API.
+
+End with: what I learned, git commit, Day 8 preview.
+```
+
+---
+
+### Day 8
+```
+PixelRonin.Dev — Day 8: Moving from Vite to Next.js App Router.
+
+Yesterday I finished the frontend in Vite. Today I move it into Next.js — the framework I will deploy on Cloudflare.
+
+Before touching any code:
+- What does Next.js add on top of React that Vite does not give me?
+- What is "file-based routing"? How does it differ from what I was doing in Vite with React Router?
+- What is the "App Router"? What was the old "Pages Router"? Why did Next.js change it?
+- What is a "Server Component" and what is a "Client Component"? Explain the difference with a plain analogy — not technical jargon.
+- What does "use client" at the top of a file actually tell Next.js?
+- What is ESLint? What is Prettier? Why do professional projects use both?
+
+Migrate my entire React app into apps/web using Next.js 14. Before moving each file, tell me where it goes and why. After migration, show me that everything still works.
+
+End with: what I learned, git commit, Day 9 preview.
+```
+
+---
+
+### Day 9
+```
+PixelRonin.Dev — Day 9: Server vs Client components — the most important mental model in Next.js.
+
+Yesterday I migrated to Next.js. Today I learn the rule I must never break.
+
+Before code:
+- Explain exactly what runs on the server and what runs in the browser. Use a restaurant kitchen analogy or something equally clear.
+- What breaks if I use useState in a Server Component? What error will I see?
+- What breaks if I make everything a Client Component? What do I lose?
+- What does the "Client Component boundary" mean? If I mark a parent as use client, what happens to all its children?
+- What can a Server Component do that a Client Component cannot? (Database access, secrets, heavy computation)
+
+Audit every component I have. Decide together — out loud — which should be Server and which needs use client and why. Refactor accordingly.
+
+End with: what I learned, git commit, Day 10 preview.
+```
+
+---
+
+### Day 10
+```
+PixelRonin.Dev — Day 10: Route Handlers — my first API endpoints.
+
+Yesterday I fixed the Server/Client split. Today I write my first API routes inside Next.js.
+
+Before code:
+- What is an "API"? Explain it with a waiter/restaurant analogy.
+- What is an HTTP method? Explain GET, POST, PUT, DELETE in plain English with examples from real life.
+- What is a "Route Handler" in Next.js App Router? How is it different from a React component file?
+- What is JSON and why do APIs use it?
+- What is "curl" and how do I use it to test an API without a UI?
+- What is a "status code"? What do 200, 404, 500 mean?
+
+Create app/api/roadmap/route.ts that returns hardcoded phase and day JSON. Create app/api/chat/route.ts as a placeholder that returns {message: "AI coming soon"}.
+
+Test both with curl. Explain each part of the curl command word by word.
+
+Note: these are temporary endpoints inside Next.js. In Day 15 we will build a proper separate backend. Explain why we will need a separate backend at all.
+
+End with: what I learned, git commit, Day 11 preview.
+```
+
+---
+
+### Day 11
+```
+PixelRonin.Dev — Day 11: Tailwind CSS — styling the PixelRonin design system.
+
+Yesterday I built API routes. Today I make the app look real.
+
+Before code:
+- What is CSS and what problem does it solve?
+- What is Tailwind CSS? How is it different from writing regular CSS or using Bootstrap?
+- What is a "utility class"? Show me a before/after of the same button in plain CSS vs Tailwind.
+- What is a "design system"? What are "brand colors" and "tokens"?
+- What is a tailwind.config file and what can I customize in it?
+
+Install Tailwind. Set up a custom config with PixelRonin brand colors, fonts (pick something distinctive — not Inter). Style every component I have built. Make it look like a real product with a dark editorial aesthetic.
+
+For every new Tailwind class I use, explain what it does before I add it.
+
+End with: what I learned, git commit, Day 12 preview.
+```
+
+---
+
+### Day 12
+```
+PixelRonin.Dev — Day 12: Deploying to Cloudflare Pages — making it live.
+
+Yesterday I styled the app. Today I put it on the internet.
+
+Before touching anything:
+- What does "deploy" mean? What actually happens between me pushing code and a user being able to open the URL?
+- What is Cloudflare Pages? How is it different from just uploading files to a server?
+- What is GitHub? What is a "repository"? What does "push to GitHub" mean?
+- What is a "build step"? Why does Next.js need to be "built" before deployment — what does the build do?
+- What is an "environment variable" in the context of deployment — how is it different from my local .env file?
+- After deployment, if a user in Tokyo visits my site, what physically happens from their click to them seeing the page?
+
+Connect the repo to Cloudflare Pages. Fix any Cloudflare Workers runtime incompatibilities (explain each one as we hit it). Set environment variables. Get a live URL.
+
+End with: what I learned, git commit, Day 13 preview.
+```
+
+---
+
+### Day 13
+```
+PixelRonin.Dev — Day 13: Clerk auth — login and signup.
+
+Yesterday PixelRonin went live. Today I add authentication.
+
+Before code:
+- What is "authentication"? What is "authorization"? What is the difference?
+- What is a session? What is a cookie? What is a JWT (JSON Web Token)? Explain JWT structure: header, payload, signature — what each part is.
+- Why is building auth yourself dangerous? What can go wrong?
+- What is Clerk? What does it handle that I would otherwise have to build?
+- What is "middleware" in Next.js? What does it mean to run code "before the page loads"?
+- What does it mean to "protect a route"?
+
+Install Clerk. Add sign-up and sign-in pages. Protect /dashboard with Next.js middleware so unauthenticated users get redirected to /sign-in.
+
+Show me what happens in the browser network tab when I log in — what request is sent, what comes back, where the JWT lives.
+
+End with: what I learned, git commit, Day 14 preview.
+```
+
+---
+
+### Day 14
+```
+PixelRonin.Dev — Day 14: Streaming UI with Suspense — skeleton loaders and live text.
+
+Yesterday I added auth. Today I build the foundation for the AI chat UI.
+
+Before code:
+- What is "streaming" in the context of a web app? Give me the difference between a regular response and a streaming response.
+- What is React Suspense? What problem did it solve that existed before it?
+- What is a "skeleton loader"? Why do apps show skeletons instead of just a spinner?
+- What is a ReadableStream? What is a TextDecoder?
+- How does streaming work end to end in Next.js — from server to browser?
+
+Build a skeleton loading state for the roadmap page. Build a streaming text component that reveals text character by character using setInterval (we will replace this with real AI tokens on Day 28).
+
+End with: what I learned, git commit, Day 15 preview — and explain why we now need a SECOND app (the backend) instead of just adding more routes to Next.js.
+```
+
+---
+
+### Day 15
+```
+PixelRonin.Dev — Day 15: Building the Hono API backend — a completely separate server.
+
+Yesterday I finished the frontend. Today I start the backend.
+
+Before any code, answer these questions clearly:
+- What is a "backend"? What can it do that frontend code running in the browser cannot?
+- What is Node.js in this context — what does it mean to "run JavaScript on a server"?
+- What is Hono? Why are we using it instead of Express (the most popular option)?
+- What is TypeScript? What does it add to JavaScript? Why do backends use it?
+- What is a "port"? When I run the server on port 3001, what does that mean?
+- What is tsconfig.json? What does ts-node-dev do?
+
+Now the important question: when I deploy this backend to Cloudflare Workers on Day 30, it will get its OWN URL — something like api.pixelronin.dev or pixelronin-api.workers.dev. This means the API will be accessible in a browser at that URL. We will add a Swagger UI (like FastAPI's /docs page) so I can see and test every API endpoint with a visual interface — just like what you saw in FastAPI. Explain how we will set that up.
+
+Scaffold apps/api with Hono. Add tsconfig and ts-node-dev. Create a typed GET /api/health route. Add Swagger UI so hitting /docs shows me all my endpoints visually.
+
+End with: what I learned, git commit, Day 16 preview.
+```
+
+---
+
+### Day 16
+```
+PixelRonin.Dev — Day 16: Designing the full API contract — what endpoints does PixelRonin need?
+
+Yesterday I got the Hono server running. Today I design the full API before writing it.
+
+Before code:
+- What does "REST" stand for and what does it actually mean in practice?
+- What is an "endpoint"? What is a "route"?
+- What is the difference between GET, POST, PUT, and DELETE — use real examples from PixelRonin's own data?
+- What is a "request body"? What is a "response"? What is a "header"?
+- What is an API "contract"? Why do teams write the contract before writing the code?
+- What is a "path parameter" (like /progress/:userId)? What is a "query parameter"?
+
+Design the full PixelRonin API contract as a markdown spec:
+- GET /api/health
+- GET /api/roadmap
+- POST /api/chat
+- GET /api/progress/:userId
+- POST /api/intake
+
+For each endpoint explain: who calls it, what they send, what comes back, and what status codes it can return.
+
+Implement GET /api/roadmap with hardcoded data. Show it in the Swagger UI we set up yesterday.
+
+End with: what I learned, git commit, Day 17 preview.
+```
+
+---
+
+### Day 17
+```
+PixelRonin.Dev — Day 17: Zod validation and error handling — never trust the client.
+
+Yesterday I designed the API. Today I make it safe.
+
+Before code:
+- Why do we never trust data sent from a client, even from our own frontend?
+- What is "schema validation"? What is Zod?
+- What does "type safety" mean at runtime vs at compile time — why does TypeScript alone not protect my API?
+- What is "middleware"? What is a "global error handler"?
+- What does a consistent error response shape mean — why does it matter for the frontend?
+- What is a try/catch block and what happens without one if my code throws?
+
+Add Zod schemas to every request body in the API. Build a central error handler middleware that catches all errors and returns them as {error: string, status: number}. Test validation errors in the Swagger UI.
+
+End with: what I learned, git commit, Day 18 preview.
+```
+
+---
+
+### Day 18
+```
+PixelRonin.Dev — Day 18: Connecting frontend to backend — making them talk.
+
+Yesterday I secured the API. Today I wire the two apps together.
+
+Before code:
+- What is CORS? Why does the browser block cross-origin requests? What would happen without it?
+- What is a "cross-origin request" — why does calling my API from my frontend count as cross-origin even though I built both?
+- What is a "shared types" file in a monorepo — why is it powerful to have TypeScript types both apps agree on?
+- What is a "fetch" call in JavaScript — what physically happens when I call fetch()?
+- How do environment variables work here — how does the frontend know the API URL in development vs in production?
+
+Replace the hardcoded data in the Next.js dashboard with a real fetch to GET /api/roadmap. Enable CORS on the Hono server. Create a shared types package in the monorepo. Show me the network tab in browser devtools so I can see the request and response live.
+
+End with: what I learned, git commit, Day 19 preview.
+```
+
+---
+
+### Day 19
+```
+PixelRonin.Dev — Day 19: JWT auth middleware — making the API trust only logged-in users.
+
+Yesterday the frontend talks to the backend. Today the backend checks who is talking.
+
+Before code:
+- Take me through a JWT token structure again — header, payload, signature — but this time show me a REAL decoded token from Clerk.
+- What does "verify a token" mean? What would happen if I trusted a JWT without verifying its signature?
+- What is middleware in Hono specifically — how does it run before the route handler?
+- What does "attach userId to the request context" mean — how does the route handler then read it?
+- What is the difference between authentication (who are you?) and authorization (are you allowed to do this?) — where in the code does each happen?
+
+Build an authMiddleware in Hono that verifies the Clerk JWT on every protected route and attaches userId to the Hono context. Test with a valid token and an invalid one in the Swagger UI.
+
+End with: what I learned, git commit, Day 20 preview.
+```
+
+---
+
+### Day 20
+```
+PixelRonin.Dev — Day 20: Rate limiting and structured logging — making the API production-grade.
+
+Yesterday I secured the API with auth. Today I add two things every production API needs.
+
+Before code:
+- What is rate limiting? What happens to an API without it — show me a concrete attack scenario.
+- What is "structured logging"? What is wrong with console.log in production?
+- What is pino? What does "JSON logging" mean — what does a structured log line look like?
+- What is a "request ID"? Why do production systems give every request a unique ID?
+- What is "log aggregation" — where do logs go in a real production system?
+
+Add rate limiting to the /api/chat route (10 requests per minute per IP). Add pino logging to every request — log method, path, statusCode, duration, userId. Show me what the logs look like in the terminal.
+
+End with: what I learned, git commit, Day 21 preview.
+```
+
+---
+
+### Day 21
+```
+PixelRonin.Dev — Day 21: API Gateway pattern — one front door to many services.
+
+Yesterday I made the API production-grade. Today I learn a pattern used by every large company.
+
+Before code:
+- What is a "microservice"? Why do large companies break one big app into many small services?
+- What is an "API Gateway"? Draw me the before (no gateway) and after (with gateway) architecture in words.
+- What is "proxying" — when the gateway receives a request and forwards it to another service?
+- What problem does a gateway solve — what would the frontend have to do without one?
+- How does PixelRonin relate to this pattern — we have a frontend app and an API app, is that already a microservice architecture?
+
+Add a /gateway route in Hono that acts as a single entry point and routes to internal handlers. Explain the pattern concretely with our current codebase.
+
+End with: what I learned, git commit, Day 22 preview — and explain why we now need a real database instead of hardcoded data.
+```
+
+---
+
+### Day 22
+```
+PixelRonin.Dev — Day 22: PostgreSQL and Prisma — a real database.
+
+Yesterday I built the API Gateway pattern. Today I add a real database.
+
+Before any code:
+- What is a database? Why can't I just save data to a JSON file on the server?
+- What is PostgreSQL? What makes it "relational" — what does that word mean?
+- What is a "table"? What is a "row"? What is a "column"? What is a "primary key"?
+- What is Supabase? What does it give me that running my own Postgres wouldn't?
+- What is an ORM? What is Prisma? Show me what a SQL query looks like vs the Prisma equivalent.
+- What is a "schema"? What is a "migration"?
+
+Set up a Supabase Postgres instance. Install Prisma. Write the schema — User, RoadmapProgress, ChatSession, IntakeForm. Explain each field and why it exists. Run the first migration. Show me the tables in the Supabase dashboard.
+
+End with: what I learned, git commit, Day 23 preview.
+```
+
+---
+
+### Day 23
+```
+PixelRonin.Dev — Day 23: Prisma CRUD — reading and writing real data.
+
+Yesterday I created the schema. Today I read and write data.
+
+Before code:
+- What does CRUD stand for and what does each letter map to in Prisma and in SQL?
+- What is an "upsert"? When would I use it instead of create?
+- What is a "query"? What is the difference between findOne and findMany?
+- What is the "N+1 problem"? Give me a concrete example with PixelRonin data — for example, fetching 10 users and then their progress separately.
+- What is Prisma "include" and how does it solve N+1?
+
+Save and load user roadmap progress (which days are done) using upsert. Show me the N+1 problem in code, then fix it with include. Verify the data is actually saving by checking the Supabase dashboard.
+
+End with: what I learned, git commit, Day 24 preview.
+```
+
+---
+
+### Day 24
+```
+PixelRonin.Dev — Day 24: Relationships — linking tables together.
+
+Yesterday I did basic CRUD. Today I connect the tables.
+
+Before code:
+- What is a "foreign key"? What does it mean for a row in one table to "belong to" a row in another?
+- What is a one-to-many relationship? Give me a PixelRonin example.
+- What is a many-to-many relationship? Give me a general example.
+- What is a JOIN in SQL? What does Prisma's include do that is equivalent?
+- What would happen if I deleted a User — what happens to their Progress rows? What is "cascade delete"?
+
+Save intake form answers linked to a User. Save ChatSession messages linked to a User. Write a single query that pulls a user's full profile — intake answers, progress, and last 10 chat messages — in one database call.
+
+End with: what I learned, git commit, Day 25 preview.
+```
+
+---
+
+### Day 25
+```
+PixelRonin.Dev — Day 25: Database design thinking and writing my first ADR.
+
+Yesterday I wired up all the relationships. Today I think like a senior engineer.
+
+Before code:
+- What makes a database schema "good" vs "bad"? Give me examples of both.
+- What is an "index" in a database? What does adding an index actually do physically?
+- What is "normalization"? What is a "JSON blob in a column" and why is it usually a bad idea?
+- What is a foreign key constraint and why does it protect my data?
+- What is an Architecture Decision Record (ADR)? Why do engineering teams write them? Show me the format.
+
+Add indexes on userId and createdAt in the schema. Run the migration. Then write my first ADR: "Why PostgreSQL over MongoDB for PixelRonin" — write it properly, include context, options considered, decision, and consequences.
+
+End with: what I learned, git commit, Day 26 preview — and tell me what is about to change dramatically on Day 26.
+```
+
+---
+
+### Day 26
+```
+PixelRonin.Dev — Day 26: Calling Claude AI — my first real AI-powered endpoint.
+
+Yesterday I finished the database. Today PixelRonin gets intelligent.
+
+Before code:
+- What is an LLM (Large Language Model)? How is calling an API different from what I think of as "AI"?
+- What is a "prompt"? What do I actually send to Claude — what is the structure of the request?
+- What is a "completion" or "message" — what does Claude send back?
+- What is an API key? How do I keep it secret so it never appears in my code or my git history?
+- What is "streaming" from an AI — why do tokens appear one by one instead of all at once?
+- What is a "token"? How does Claude count them?
+
+Add ANTHROPIC_API_KEY to env. Wire POST /api/chat in Hono to call claude-sonnet-4-20250514. Stream the response back. Show me this working in the Swagger UI — type a message, watch tokens stream back.
+
+End with: what I learned, git commit, Day 27 preview.
+```
+
+---
+
+### Day 27
+```
+PixelRonin.Dev — Day 27: System prompt engineering — giving the AI a persona and context.
+
+Yesterday Claude responded to any prompt. Today I make it specifically a PixelRonin guide.
+
+Before code:
+- What is a "system prompt"? How is it different from the user's message?
+- What does it mean to "inject context" into a prompt? Show me a before/after where the AI gives a completely different answer based on the system prompt.
+- What is "prompt engineering"? Is it a real skill?
+- What happens to the AI's response if the context I inject is wrong or out of date?
+- What are "hallucinations" and how does good prompt design reduce them?
+
+Design the PixelRonin AI persona — a guide who knows the 30-day plan and the user's current progress. Inject the user's current progress, intake answers, and today's day number into the system prompt so the AI knows exactly where they are. Test it: ask it "what should I focus on today?" and show me how the answer changes based on different injected progress states.
+
+End with: what I learned, git commit, Day 28 preview.
+```
+
+---
+
+### Day 28
+```
+PixelRonin.Dev — Day 28: Streaming chat UI — tokens appear as they arrive.
+
+Yesterday the AI has context. Today I build the chat interface.
+
+Before code:
+- Walk me through what happens end to end when I click "Send" — from the button click to the first token appearing on screen. Every step.
+- What is a ReadableStream? What is a TextDecoder? What is a StreamReader?
+- What is an async generator function? Why is it useful for streaming?
+- What is the difference between response.text() and reading a stream?
+- What is a "typing indicator" — why do chat apps show it?
+
+Build the full chat interface: message input, streaming token display, typing indicator, scroll to latest message. Each token appears as it arrives. Show me how to handle stream errors gracefully.
+
+End with: what I learned, git commit, Day 29 preview.
+```
+
+---
+
+### Day 29
+```
+PixelRonin.Dev — Day 29: Roadmap recommendation — structured output from AI.
+
+Yesterday I built streaming chat. Today I make the AI generate data I can use in the UI.
+
+Before code:
+- What is "structured output" from an LLM? Why can't I always just ask for JSON?
+- What prompting techniques make an LLM reliably return JSON instead of prose?
+- What is "prompt injection"? If the AI returns JSON and I JSON.parse it, what could go wrong?
+- What is the difference between asking the AI to "explain the roadmap" vs "return a recommended order as JSON I can use in code"?
+
+Feed the user's intake form answers to Claude. Prompt it to return a recommended day order as a JSON array. Parse that JSON safely. Highlight the recommended days on the dashboard with a visual indicator.
+
+Test edge cases: what if the AI returns invalid JSON? What if it adds text before the JSON?
+
+End with: what I learned, git commit, Day 30 preview.
+```
+
+---
+
+### Day 30
+```
+PixelRonin.Dev — Day 30: Ship day — deploy everything, write the README, reflect on 30 days.
+
+Yesterday I finished the AI features. Today I ship the whole thing.
+
+Before deploying, explain to me:
+- What is a Cloudflare Worker? How is it different from a traditional Node.js server?
+- What does it mean to "deploy to the edge"? Why does Cloudflare run code in 300+ cities?
+- What is a wrangler.toml file and what does it configure?
+- How do environment variables work in Cloudflare Workers — how is it different from my local .env file?
+- After deployment, the backend will have its own URL. What does that URL look like? How does the frontend know to call it?
+- Will the Swagger UI at /docs still work after deployment? Walk me through accessing it.
+
+Walk me through deploying the Hono API to Cloudflare Workers step by step. Explain each wrangler command. Check every env variable is set in production. Fix anything broken.
+
+Write a README with: what the project is, the full architecture (ASCII diagram), how to run locally, and how to deploy.
+
+Then — most importantly — tell me every concept I learned across 30 days, organized by layer (React, Next.js, API, database, auth, AI, deployment). Tell me what I am now capable of building that I couldn't before Day 0. And tell me what to build next.
+
+Final git commit: "feat: ship day — PixelRonin.Dev complete".
+```

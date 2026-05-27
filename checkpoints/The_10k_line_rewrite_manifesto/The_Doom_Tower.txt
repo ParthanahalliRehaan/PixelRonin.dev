@@ -1,0 +1,5 @@
+**Frontend:** Next.js on Cloudflare Pages, Also React Tailwind
+**Backend:** Node + Hono on Cloudflare Workers, Also TS
+**DB:** Postgres via Supabase free tier + Prisma ORM
+**Auth:** Clerk (free tier, handles JWT, works with CF)
+**AI:** Anthropic Claude API (server-side only, never in frontend)

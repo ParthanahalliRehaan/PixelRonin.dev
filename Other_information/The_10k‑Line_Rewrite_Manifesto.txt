@@ -1,0 +1,70 @@
+When preparing to build a web app, developers should ask a structured set of questions that cover 
+**vision, scope, architecture, and execution**. These questions help avoid costly rework and ensure alignment with stakeholders. 
+Here’s a comprehensive checklist:
+
+---
+
+## 🧭 Product & Vision
+- What problem does this app solve?
+- Who is the target audience?
+- What is the **MVP (Minimum Viable Product)** scope?
+- What are the success metrics (KPIs)?
+- Are there competitors or benchmarks to study?
+
+---
+
+## 🏗️ Architecture & Design
+- What tech stack will be used (frontend, backend, database)?
+- Should it be monolithic or microservices?
+- How will the **directory structure** be organized for scalability?
+- What design patterns (MVC, MVVM, etc.) fit best?
+- Will it be responsive/mobile-first?
+
+---
+
+## 🔒 Security & Compliance
+- How will authentication/authorization be handled?
+- What data privacy laws apply (GDPR, HIPAA, etc.)?
+- How will sensitive data be stored and encrypted?
+- What logging and monitoring practices will be in place?
+
+---
+
+## ⚙️ Development Workflow
+- What version control strategy (Git flow, trunk-based)?
+- How will CI/CD pipelines be set up?
+- What coding standards and linting rules will be enforced?
+- How will testing be structured (unit, integration, E2E)?
+- What environments are needed (dev, staging, prod)?
+
+---
+
+## 📦 Infrastructure & Deployment
+- Where will the app be hosted (cloud provider, on-prem)?
+- How will scalability be handled (load balancing, caching)?
+- What database strategy (SQL vs NoSQL, indexing)?
+- How will backups and disaster recovery be managed?
+
+---
+
+## 🎨 UX & UI
+- What design system or framework (Material UI, Tailwind)?
+- How will accessibility (WCAG compliance) be ensured?
+- What user flows are critical for MVP?
+- How will feedback loops be integrated?
+
+---
+
+## 📊 Analytics & Growth
+- What analytics tools (Google Analytics, Mixpanel)?
+- How will user behavior be tracked?
+- What is the plan for A/B testing?
+- How will onboarding and retention be measured?
+
+---
+
+## 🧑‍🤝‍🧑 Team & Collaboration
+- Who owns product decisions?
+- What project management tool (Jira, Trello)?
+- How will communication be structured (Slack, standups)?
+- What is the release cycle (weekly, bi-weekly)?

@@ -1,0 +1,5 @@
+the backbone has been listed in checkpoints/10k_line_rewrite_manifesto i.e this backbone will have link to be downloaded from steam & 
+this will have a chatbot to decide what to learn through samples and decide also give a roadmap for better understanding.
+
+for game dev stack think in 9 ig as industry stack will be different in future so think about it at that time
+dont go for learning all the things just upper layer as said.

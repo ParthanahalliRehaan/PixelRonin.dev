@@ -1,0 +1,74 @@
+## 🧩 Core Operators
+
+| Operator | Meaning | Example | Output |
+|----------|---------|---------|--------|
+| `>` | Child | `ul>li` | `<ul><li></li></ul>` |
+| `+` | Sibling | `h1+p` | `<h1></h1><p></p>` |
+| `^` | Climb up | `div>p>span^a` | `<div><p><span></span></p><a></a></div>` |
+| `()` | Group | `(span>em)*2` | Two `<span><em></em></span>` blocks |
+| `*n` | Multiply | `li*3` | Three `<li></li>` |
+| `{}` | Text | `p{Hello}` | `<p>Hello</p>` |
+| `[]` | Attributes | `a[href="#"]` | `<a href="#"></a>` |
+| `$` | Numbering | `li.item$*3` | `<li class="item1"></li>…` |
+
+---
+
+## 🔢 `$` Placeholder (Dynamic Numbering)
+
+- **Classes**: `div.box$*3` → `box1`, `box2`, `box3`
+- **IDs**: `li#id$*3` → `id1`, `id2`, `id3`
+- **Attributes**: `img[src=img$.png]*3` → `img1.png`, `img2.png`, `img3.png`
+- **Text**: `p{Item $}*3` → `Item 1`, `Item 2`, `Item 3`
+
+### Advanced Variants
+- **Padding**: `item$$` → `item01`, `item02`
+- **Start index**: `item$@5*3` → `item5`, `item6`, `item7`
+- **Reverse**: `item$@-3*3` → `item3`, `item2`, `item1`
+
+---
+
+## 🎯 Grouping + Multiplication + Classes
+
+```emmet
+(div.card$>h2.title{Card $}+p.desc{Description $})*3
+```
+
+👉 Output:
+```html
+<div class="card1">
+  <h2 class="title">Card 1</h2>
+  <p class="desc">Description 1</p>
+</div>
+<div class="card2">
+  <h2 class="title">Card 2</h2>
+  <p class="desc">Description 2</p>
+</div>
+<div class="card3">
+  <h2 class="title">Card 3</h2>
+  <p class="desc">Description 3</p>
+</div>
+```
+
+---
+
+## ⚡ Power Patterns
+
+- **Lists with numbered items**:  
+  `ul>li.item$*5` → `<li class="item1">…</li>` … `<li class="item5">…</li>`
+- **Image galleries**:  
+  `(figure>img[src=img$.jpg]+figcaption{Image $})*4`
+- **Form fields**:  
+  `(label[for=field$]{Field $}+input#field$[type=text])*3`
+
+---
+
+## 🧠 Strategy Takeaway
+- Use **grouping `( … )`** to wrap complex structures.  
+- Apply **multiplication `*n`** to repeat them.  
+- Drop in **`$` placeholders** for auto‑numbering across **class, id, attributes, and text**.  
+- Combine with **attributes `[]`** and **text `{}`** for fully scaffolded, ready‑to‑style HTML.  
+
+---
+
+👉 In short: **Emmet’s advanced combo = `(pattern)*n` + `$` + `{}` + `[]`**.  
+This lets you generate **entire component scaffolds** (cards, lists, forms, galleries) in seconds, with classes, IDs, attributes, and text already numbered and structured.  

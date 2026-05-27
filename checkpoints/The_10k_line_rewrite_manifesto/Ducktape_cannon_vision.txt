@@ -1,0 +1,10 @@
+## Vision
+
+**Problem:** Developers don't know what to learn next or in what order.
+**Solution:** PixelRonin is an AI guide that gives you a personalised roadmap and explains each step as you go.
+**Audience:** You + a few devs publicly at launch.
+**MVP:** One thing only —
+
+> **A user fills the intake form → AI generates their personalised 30-day roadmap → they can track progress.**
+
+Chat, streaming, recommendations — all cut from MVP. Ship that one loop first.
